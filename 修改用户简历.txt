@@ -1,0 +1,135 @@
+<?php  
+require_once 'functions.php';?>  
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="UTF-8">  
+    <title>修改用户简历</title>  
+</head>  
+<body>  
+<?php  
+    if(!empty($_GET['id'])){  
+        //连接mysql数据库  
+        connnetDb();  
+  
+  
+        //查找id  
+        $id=intval($_GET['id']);  
+        $result=mysql_query("SELECT * FROM users WHERE id=$id");  
+        if(mysql_error()){  
+            die('can not connect db');  
+        }  
+        //获取结果数组  
+        $result_arr=mysql_fetch_assoc($result);  
+    }else{  
+        die('id not define');  
+    }  
+?>  
+<form action="edituser_server.php" method="post">  
+    <label>用户ID：</label><input type="text" name="id" value="<?php echo $result_arr['id']?>">  
+    <label>用户名：</label><input type="text" name="name" value="<?php echo $result_arr['name']?>">  
+    <label>用户年龄：</label><input type="text" name="age" value="<?php echo $result_arr['age']?>">  
+    <label>学历：</label><input type="text" name="education" value="<?php echo $result_arr['education']?>">  
+    <label>性别：</label><input type="text" name="sex" value="<?php echo $result_arr['sex']?>">  
+ <label>手机号：</label><input type="text" name="tel" value="<?php echo $result_arr['tel']?>">  
+ <label>专业：</label><input type="text" name="major" value="<?php echo $result_arr['major']?>">  
+    <input type="submit" value="提交修改">  
+</form>  
+</body>  
+</html>
+<?php  
+require_once 'functions.php';  
+if(empty($_POST['id'])){  
+    die('id is empty');  
+}  
+if(empty($_POST['name'])){  
+    die('name is empty');  
+}  
+if(empty($_POST['age'])){  
+    die('age is empty');  
+}  
+if(empty($_POST['education'])){  
+    die('education is empty');  
+}  
+if(empty($_POST['sex'])){  
+    die('sex is empty');  
+}  
+if(empty($_POST['sex'])){  
+    die('tel is empty');  
+}  
+if(empty($_POST['sex'])){  
+    die('major is empty');  
+}  
+    
+  
+$id=intval($_POST['id']);  
+$name=$_POST['name'];  
+$age=intval($_POST['age']);  
+$education=intval($_POST['education']);  
+$sex=intval($_POST['sex']);  
+$tel=intval($_POST['tel']);  
+$major=intval($_POST['major']);  
+  
+  
+//连接数据库  
+connnetDb();  
+  
+  
+//修改指定数据  
+mysql_query("UPDATE users SET name='$name',age='$age',education='$education' ,sex='$sex'WHERE id=$id");  
+  
+  
+//排错并返回  
+if(mysql_error()){  
+    echo mysql_error();  
+}else{  
+    header("Location:allusers.php");  
+}
+
+<?php  
+require_once 'functions.php';  
+if(empty($_POST['id'])){  
+    die('id is empty');  
+}  
+if(empty($_POST['name'])){  
+    die('name is empty');  
+}  
+if(empty($_POST['age'])){  
+    die('age is empty');  
+}  
+if(empty($_POST['education'])){  
+    die('education is empty');  
+}  
+if(empty($_POST['sex'])){  
+    die('sex is empty');  
+}  
+if(empty($_POST['sex'])){  
+    die('tel is empty');  
+}  
+if(empty($_POST['sex'])){  
+    die('major is empty');  
+}  
+    
+  
+$id=intval($_POST['id']);  
+$name=$_POST['name'];  
+$age=intval($_POST['age']);  
+$education=intval($_POST['education']);  
+$sex=intval($_POST['sex']);    
+$tel=intval($_POST['tel']);   
+$major=intval($_POST['major']);   
+  
+//连接数据库  
+connnetDb();  
+  
+  
+//修改指定数据  
+mysql_query("UPDATE users SET name='$name',age='$age',education='$education' ,sex='$sex' WHERE id=$id");  
+  
+  
+//排错并返回  
+if(mysql_error()){  
+    echo mysql_error();  
+}else{  
+    header("Location:allusers.php");  
+}
