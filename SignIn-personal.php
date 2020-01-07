@@ -45,7 +45,7 @@ $sql = "insert into geren(Gname, Gsex, Gyear, Gzhuanye, Gxueli, Gemail,Gtel,Gpas
 $result=mysql_query($sql);
 
 if($result){
-		echo "<script>alert('个人注册成功');</script>";
+		echo "<script>alert('个人注册成功');window.open('index.php','_self')</script>";
 	}
 	else{
 		echo "<script>alert('个人注册失败');</script>";
