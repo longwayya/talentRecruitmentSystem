@@ -12,14 +12,14 @@ if($conn)
 mysql_query("set names utf8");
 ?>
 <html>
-<head> 
-<meta charset="UTF-8">
+<head>
+<meta charset="UTF-8"> 
 <title>人才中介网</title>
 <br/><br/><br/><br/><br/><br/>
 <h2>登录</h2>
  <style>       body{text-align:center}     </style>
 </head>
-<body style="background-image:url(D:\php\PHPTutorial\WWW\shixun\1.jpg);background-position:center;">        
+<body style="background-image:url(D:\数据库\2.jpg);background-position:center;">        
 <form action="" method="POST" name="myform" onsubmit="return check()">
 账号：
 <input type="text" name="username"><br/><br/>
@@ -74,7 +74,7 @@ if(isset($_POST['login3'])){
 	}
 }
 if(isset($_POST['login4'])){
-		echo "<script>window.open('../shixun/SignIn-personal.php','_self')</script>";
+		echo "<script>window.open('../zhuce.php','_self')</script>";
 }
 ?>
 </body>
