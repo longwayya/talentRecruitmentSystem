@@ -19,7 +19,7 @@ mysql_query("set names utf8");
 <h2>登录</h2>
  <style>       body{text-align:center}     </style>
 </head>
-<body style="background-image:url(D:\数据库\2.jpg);background-position:center;">        
+<body style="background-image:url(2.jpg);background-position:center;background-size:100% 100%;">        
 <form action="" method="POST" name="myform" onsubmit="return check()">
 账号：
 <input type="text" name="username"><br/><br/>
