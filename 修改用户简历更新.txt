@@ -1,0 +1,152 @@
+<?php  
+require_once 'functions.php';?>  
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="UTF-8">  
+    <title>修改用户简历</title>  
+</head>  
+<body>  
+<?php  
+    if(!empty($_GET['id'])){  
+        //连接mysql数据库  
+        connnetDb();  
+  
+  
+        //查找id  
+        $Gname=intval($_GET['name']);  
+        $result=mysql_query("SELECT * FROM users WHERE Gname=$name");  
+        if(mysql_error()){  
+            die('can not connect db');  
+        }  
+        //获取结果数组  
+        $result_arr=mysql_fetch_assoc($result);  
+    }else{  
+        die('id not define');  
+    }  
+?>  
+<form action="edituser_server.php" method="post">  
+
+    <label>用户名：</label><input type="text" name="Gname" value="<?php echo $result_arr['name']?>">  
+    <label>用户密码：</label><input type="text" name="Gpassword" value="<?php echo $result_arr['password']?>">  
+    <label>用户年龄：</label><input type="text" name="Gyear" value="<?php echo $result_arr['age']?>">  
+    <label>学历：</label><input type="text" name="Gxueli" value="<?php echo $result_arr['education']?>">  
+    <label>性别：</label><input type="text" name="Gsex" value="<?php echo $result_arr['sex']?>">  
+ <label>手机号：</label><input type="text" name="Gtel" value="<?php echo $result_arr['tel']?>">  
+ <label>专业：</label><input type="text" name="Gzhuanye" value="<?php echo $result_arr['major']?>">  
+ <label>邮箱：</label><input type="text" name="Gemail" value="<?php echo $result_arr['email']?>">
+   
+    <input type="submit" value="提交修改">  
+</form>  
+</body>  
+</html>
+<?php  
+require_once 'functions.php';  
+if(empty($_POST['password'])){  
+    die('password is empty');  
+}  
+if(empty($_POST['name'])){  
+    die('name is empty');  
+}  
+if(empty($_POST['age'])){  
+    die('age is empty');  
+}  
+if(empty($_POST['education'])){  
+    die('education is empty');  
+}  
+if(empty($_POST['sex'])){  
+    die('sex is empty');  
+}  
+if(empty($_POST['tel'])){  
+    die('tel is empty');  
+}  
+if(empty($_POST['major'])){  
+    die('major is empty');  
+}  
+if(empty($_POST['email'])){  
+    die('email is empty');  
+}  
+
+
+    
+  
+$Gpassword=intval($_POST['password']);  
+$Gname=$_POST['name'];  
+$Gyear=intval($_POST['age']);  
+$Gxueli=intval($_POST['education']);  
+$Gsex=intval($_POST['sex']);  
+$Gtel=intval($_POST['tel']);  
+$Gzhuanye=intval($_POST['major']);  
+$Gemail=intval($_POST['email']);  
+
+  
+  
+//连接数据库  
+connnetDb();  
+  
+  
+//修改指定数据  
+mysql_query("UPDATE users SET Gpassword='$password',Gyear='$age',Gtel='$tel',Gxueli='$education' ,Gsex='$sex' ,Gemail='$email',Gzhuanye='$major' WHERE Gname=$name");  
+  
+  
+//排错并返回  
+if(mysql_error()){  
+    echo mysql_error();  
+}else{  
+echo "<script>alert('修改成功。');</script>";    
+header("Location:allusers.php");  
+}
+
+<?php  
+require_once 'functions.php';  
+if(empty($_POST['password'])){  
+    die('password is empty');  
+}  
+if(empty($_POST['name'])){  
+    die('name is empty');  
+}  
+if(empty($_POST['age'])){  
+    die('age is empty');  
+}  
+if(empty($_POST['education'])){  
+    die('education is empty');  
+}  
+if(empty($_POST['sex'])){  
+    die('sex is empty');  
+}  
+if(empty($_POST['tel'])){  
+    die('tel is empty');  
+}  
+if(empty($_POST['major'])){  
+    die('major is empty');  
+}  
+if(empty($_POST['email'])){  
+    die('email is empty');  
+}  
+
+    
+  
+$Gpassword=intval($_POST['password']);  
+$Gname=$_POST['name'];  
+$Gyear=intval($_POST['age']);  
+$Gxueli=intval($_POST['education']);  
+$Gsex=intval($_POST['sex']);    
+$Gtel=intval($_POST['tel']);   
+$Gzhuanye=intval($_POST['major']);  
+$Gemail=intval($_POST['email']);  
+  
+//连接数据库  
+connnetDb();  
+  
+  
+//修改指定数据  
+mysql_query("UPDATE users SET Gpassword='$password',Gyear='$age',Gtel='$tel',Gxueli='$education' ,Gsex='$sex' ,Gemail='$email',Gzhuanye='$major' WHERE Gname=$name");  
+  
+  
+//排错并返回  
+if(mysql_error()){  
+    echo mysql_error();  
+}else{  
+echo "<script>alert('修改成功。');</script>";    
+header("Location:allusers.php");  
+}
