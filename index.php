@@ -38,7 +38,7 @@ if(isset($_POST['login1'])){
 	$result=mysql_query($sql);
 	$sum=mysql_num_rows($result);
 	if($sum){
-		echo "<script>alert('登录成功');window.open('../qiye.php','_self')</script>";
+		echo "<script>alert('登录成功');window.open('qiye.php','_self')</script>";
 		$_SESSION['user']=$user;
 	}
 	else{
@@ -52,7 +52,7 @@ if(isset($_POST['login2'])){
 	$result=mysql_query($sql);
 	$sum=mysql_num_rows($result);
 	if($sum){
-		echo "<script>alert('登录成功');window.open('../geren.php','_self')</script>";
+		echo "<script>alert('登录成功');window.open('geren.php','_self')</script>";
 		$_SESSION['user']=$user;
 	}
 	else{
@@ -66,7 +66,7 @@ if(isset($_POST['login3'])){
 	$result=mysql_query($sql);
 	$sum=mysql_num_rows($result);
 	if($sum){
-		echo "<script>alert('登录成功');window.open('../manager.php','_self')</script>";
+		echo "<script>alert('登录成功');window.open('manager.php','_self')</script>";
 		$_SESSION['user']=$user;
 	}
 	else{
@@ -74,7 +74,7 @@ if(isset($_POST['login3'])){
 	}
 }
 if(isset($_POST['login4'])){
-		echo "<script>window.open('../zhuce.php','_self')</script>";
+		echo "<script>window.open('Goto-signin.php','_self')</script>";
 }
 ?>
 </body>
