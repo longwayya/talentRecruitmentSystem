@@ -1,0 +1,34 @@
+<html>
+<head> 
+<title>管理员登录</title>
+ <h1>管理员登录</h1>
+ <style>       body{text-align:center}     </style>
+</head>
+<body style="background-image:url(D:\php\PHPTutorial\WWW\shixun.jpg);background-position:center;">        
+<form action="" method="POST" name="myform" onsubmit="return check()">
+账号：
+<input type="text" name="Mname"><br/><br/>
+密码：
+<input type="password" name="Mpassword"><br/><br/>
+<input type="submit" value="确定登录"/>
+<input type="reset" value="重新填写"/>
+</form>
+<?php
+if(isset($_POST['login'])){
+	$Mname=$_POST['Mname'];
+	$Mpassword=$_POST['Mpassword'];
+	$sql="insert into Manager(Mname,Mpassword)values('$Mname', '$Mpassword')";
+	$result=mysql_query($sql);
+	$sum=mysql_num_rows($result);
+	if($sum){
+		echo "<script>alert('登录成功');window.open('../Manager.php','_self')</script>";
+		$_SESSION['user']=$user;
+	}
+	else{
+		echo "<script>alert('账号或密码错误');window.open('#','_self')</script>";
+	}
+}
+
+?>
+</body>
+</html>
