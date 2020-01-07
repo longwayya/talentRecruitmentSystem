@@ -34,7 +34,7 @@ $Qpassword = $_POST['Qpassword'];
 $sql = "insert into qiye(Qname,Qtel,Qemail,Qlocate,Qpassword) values('$Qname', '$Qtel', '$Qemail', '$Qlocate', '$Qpassword')";
 $result=mysql_query($sql);
 if($result){
-		echo "<script>alert('企业注册成功');</script>";
+		echo "<script>alert('企业注册成功');window.open('index.php','_self')</script>";
 	}
 	else{
 		echo "<script>alert('企业注册失败');</script>";
