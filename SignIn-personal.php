@@ -4,7 +4,7 @@
  <title>个人注册</title>
  <style>       body{text-align:center}     </style>
 </head>
-<body style="background-image:url(D:\数据库\Connect.jpg);background-position:center;">
+<body style="background-image:url(2.jpg);background-position:center;">
 <form action="" method="POST" name="myform" onsubmit="return check()">
 姓  名：
 <input type="text" name="Gname"><br/><br/>
@@ -21,12 +21,16 @@
 手机号：
 <input type="text" name="Gtel"><br/><br/>
 密  码：
-<input type="text" name="Gpassward"><br/><br/>
+<input type="text" name="Gpassword"><br/><br/>
+
+<input class="login" type="submit" value="注册" name="login1">
+
+<input class="login" type="submit" value="返回" name="login2">
 </form>
 <?php
-if(isset($_POST['login'])){
+if(isset($_POST['login1'])){
 mysql_connect('localhost', 'root', 'root');
-mysql_select_db('Login');
+mysql_select_db('rencai');
 mysql_query("set names 'utf8'");
 $Gname = $_POST['Gname'];
 $Gsex = $_POST['Gsex'];
@@ -35,9 +39,11 @@ $Gzhuanye = $_POST['Gzhuanye'];
 $Gxueli = $_POST['Gxueli'];
 $Gemail= $_POST['Gemail'];
 $Gtel = $_POST['Gtel'];
-$Gpassward = $_POST['Gpassward'];
-$sql = "insert into geren(Gname, Gsex, Gyear, Gzhuanye, Gxueli, Gemail,Gtel,Gpassward) values('$Gname', '$Gsex', '$Gyear', '$Gzhuanye', '$Gxueli', '$Gemail','$Gtel','$Gpassward')";
+$Gpassword = $_POST['Gpassword'];
+$sql = "insert into geren(Gname, Gsex, Gyear, Gzhuanye, Gxueli, Gemail,Gtel,Gpassword) values('$Gname', '$Gsex', '$Gyear', '$Gzhuanye', '$Gxueli', '$Gemail','$Gtel','$Gpassword')";
+
 $result=mysql_query($sql);
+
 if($result){
 		echo "<script>alert('个人注册成功');</script>";
 	}
@@ -45,6 +51,10 @@ if($result){
 		echo "<script>alert('个人注册失败');</script>";
 	}
 }
+if(isset($_POST['login2'])){
+		echo "<script>window.open('Goto-signin.php','_self')</script>";
+}
+
 ?>
 </body>
 </html>
