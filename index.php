@@ -26,9 +26,8 @@ mysql_query("set names utf8");
 密码：
 <input type="password" name="password"><br/><br/>
 <input class="login" type="submit" value="企业登录" name="login1">
-<input class="login" type="submit" value="个人登录" name="login2">
-<input class="login" type="submit" value="管理员登录" name="login3"><br/><br/>
-<input class="login" type="submit" value="注册新用户" name="login4">
+<input class="login" type="submit" value="个人登录" name="login2"><br/><br/>
+<input class="login" type="submit" value="注册新用户" name="login3">
 </form>
 <?php
 if(isset($_POST['login1'])){
@@ -60,20 +59,6 @@ if(isset($_POST['login2'])){
 	}
 }
 if(isset($_POST['login3'])){
-	$user=$_POST['username'];
-	$password=$_POST['password'];
-	$sql="select Mname,Mpassword from manager where Mname='$user' and Mpassword='$password'";
-	$result=mysql_query($sql);
-	$sum=mysql_num_rows($result);
-	if($sum){
-		echo "<script>alert('登录成功');window.open('manager.php','_self')</script>";
-		$_SESSION['user']=$user;
-	}
-	else{
-		echo "<script>alert('账号或密码错误');window.open('#','_self')</script>";
-	}
-}
-if(isset($_POST['login4'])){
 		echo "<script>window.open('Goto-signin.php','_self')</script>";
 }
 ?>
