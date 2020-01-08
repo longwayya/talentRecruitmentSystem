@@ -48,7 +48,7 @@ if($result){
 
              </select>
             <input type="text" name="content" />
-            <input type="submit" value="search" />
+            <input type="submit" value="搜索" />
         </form>
         <input type=button class="returnbtn" onclick="window.location.href = 'geren.php'" value="返回" > 
     </div>
