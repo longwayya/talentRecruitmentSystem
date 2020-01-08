@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<body style="background-image:url(D:\php\PHPTutorial\WWW\shixun\2.jpg);background-position:center;text-align:center;">
+<body style="background-image:url(2.jpg);background-position:center;text-align:center;">
  <meta charset="UTF-8">
  <title>人才中介网</title>
  <style>       body{text-align:center}     </style>
