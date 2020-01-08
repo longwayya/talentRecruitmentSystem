@@ -2,10 +2,16 @@
 <head> 
  <meta charset="UTF-8">
  <title>企业注册</title>
- <style>       body{text-align:center}     </style>
+ <style>       body{text-align:center}  
+img{border:0px;vertical-align:middle;padding:0;margin:0} 
+input, button{font-family:"Arial", "Tahoma", "微软雅黑", "雅黑";border:0;
+vertical-align:middle;margin:8px;line-height:18px;font-size:18px} 
+.btn{width:140px;height:36px;background:url("1.1.jpg") no-repeat left top;color:#FFF;padding-bottom:4px} 
+ </style>
 </head>
 <body style="background-image:url(2.jpg);background-position:center;">
 <form action="" method="POST" name="myform" onsubmit="return check()">
+<h1 style="font-size:x-large">填写信息</h1>
 名  称：
 <input type="text" name="Qname"><br/><br/>
 电  话：
@@ -17,9 +23,9 @@
 密  码：
 <input type="text" name="Qpassword"><br/><br/>
 
-<input class="login" type="submit" value="注册" name="login1">
+<input class="btn" type="submit" value="注册" name="login1">
 
-<input class="login" type="submit" value="返回" name="login2">
+<input class="btn" type="submit" value="返回" name="login2">
 </form>
 <?php
 if(isset($_POST['login1'])){
