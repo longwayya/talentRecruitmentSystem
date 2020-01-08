@@ -51,7 +51,8 @@ $Gno=$_SESSION['user'];
 	<tr>
 	<td></td>
     <td><input type="submit" value="提交修改"> </td>
-	<td><a href="geren.php?return=<?php echo $_SERVER[REQUEST_URL];?>">返回</td>
+	
+	<td><a href="geren.php"><input type="button" value="返回"></td>
 	</tr>
    </table>
    </form>
