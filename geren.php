@@ -19,7 +19,7 @@ session_start();
 <br><br/>
 <a href="R4.php"> <font style="color:white">安格置业诚聘人才</font></a>
 <br><br/><br><br/>
-<a href="zhiweisousuo.php"> <font style="color:black">查看更多招聘信息->></font></a>
+<a href="search_J.php"> <font style="color:black">查看更多招聘信息->></font></a>
 <br><br/>
 </form>
 </body>
