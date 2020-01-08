@@ -31,6 +31,11 @@ if($result){
         background-color: rgb(224, 219, 219);
         padding-bottom: 20px;
     }
+    table,div{
+        text-align:center;
+        margin:auto;
+    }
+
     .returnbtn{
         float:right;
     }
@@ -44,7 +49,7 @@ if($result){
                 <option value="Gxueli">学历</option>
                 <option value="Gname">姓名</option>
                 <option value="Gsex">性别</option>
-                <option value="Gyear">出生年份</option>
+                <option value="Gyear">年龄</option>
              </select>
             <input type="text" name="content" />
             <input type="submit" value="search" />
@@ -56,7 +61,7 @@ if($result){
 
 
     <?php
-        $tabname=array("姓名","联系电话","性别","出生年份","学历","email","专业");
+        $tabname=array("姓名","联系电话","性别","年龄","学历","email","专业");
         $arrlength=count($tabname);
         echo '<tr>';
         for ($i=0; $i < $arrlength; $i++) { 
