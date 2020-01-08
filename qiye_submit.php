@@ -8,11 +8,12 @@
 $qtel = $_POST['qtel']; 
 $qemail = $_POST['qemail']; 
 $qlocate = $_POST['qlocal'];  
+$qpsw = $_POST['qpsw'];  
 
 session_start();
 $user=$_SESSION['user'];
 
-$exec="update qiye set Qtel = '$qtel',Qemail='$qemail',Qlocate='$qlocate' where Qname='$user'";
+$exec="update qiye set Qtel = '$qtel',Qemail='$qemail',Qpassword='$qpsw',Qlocate='$qlocate' where Qname='$user'";
 $result=mysql_query($exec);
 if($result) 
     echo " <script>alert('修改成功！');location.href='qiye.php'; </script>";

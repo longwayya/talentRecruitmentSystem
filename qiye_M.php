@@ -25,6 +25,7 @@ $user=$_SESSION['user'];
             <p>联系方式： <input type="text" name="qtel" /></p>
             <p>电子邮箱： <input type="text" name="qemail" /></p>
             <p>企业地址： <input type="text" name="qlocal" /></p>
+            <p>密码： <input type="password" name="qpsw" /></p>
             <input type="submit" value="Submit" />
         </form>
     </div>
