@@ -7,7 +7,7 @@ $result = mysql_query($exec);
 if($result){
     echo " <script>alert('查找成功！'); </script>";
 }
-    else echo "<script>alert('出现故障！'); </script>";
+    else echo "<script>alert('查找失败！'); </script>";
 ?>
 
 
@@ -40,8 +40,9 @@ if($result){
     <div class="search">
         <form action="search.php" method="post" id="search">
         <select name="leibie" form="search">
-                <option value="Zqiye" style= "width:1000px;height:100px">企业名称</option>
-			    <option value="Zname" style= "width:1000px;height:100px">职位名称</option>
+               <option value="Qname" style= "width:1000px;height:100px">企业名称</option>
+				<option value="Qlocate" style= "width:1000px;height:100px">企业地址</option>
+			    <option value="Zemail" style= "width:1000px;height:100px">职位名称</option>
                 <option value="Znumber" style= "width:1000px;height:100px">要求人数</option>
 				<option value="Zmoney" style= "width:1000px;height:100px">工资</option>
 
