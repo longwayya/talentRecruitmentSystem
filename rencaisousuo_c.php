@@ -2,7 +2,7 @@
 include 'connect.php';
 $content=$_POST['content'];
 $leibie=$_POST['leibie'];
-$exec="select Gno,Gname,Gtel,Gsex,Gyear,Gxueli,Gemail,Gzhuanye from geren where $leibie ='$content'";
+$exec="select Gname,Gtel,Gsex,Gyear,Gxueli,Gemail,Gzhuanye from geren where $leibie ='$content'";
 $result = mysql_query($exec);
 if($result){
     echo " <script>alert('查找成功！'); </script>";
@@ -56,7 +56,7 @@ if($result){
 
 
     <?php
-        $tabname=array("编号","姓名","联系电话","性别","出生年份","学历","email","专业");
+        $tabname=array("姓名","联系电话","性别","出生年份","学历","email","专业");
         $arrlength=count($tabname);
         echo '<tr>';
         for ($i=0; $i < $arrlength; $i++) { 
