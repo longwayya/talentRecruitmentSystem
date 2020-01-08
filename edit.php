@@ -12,13 +12,13 @@ $Gxueli = $_POST['Gxueli'];
 $Gzhuanye = $_POST['Gzhuanye']; 
 $Gemail = $_POST['Gemail']; 
 session_start();
-$Gname=$_SESSION['Gname'];
+$user=$_SESSION['user'];
 
-$exec="update geren set Gpassword = '$Gpassword',Gsex='$Gsex',Gyear='$Gyear',Gtel='$Gtel',Gemail='$Gemail',Gxueli='$Gxueli',Gzhuanye='$Gzhuanye' where Gname='$Gname'";
+$exec="update geren set Gpassword = '$Gpassword',Gsex='$Gsex',Gyear='$Gyear',Gtel='$Gtel',Gemail='$Gemail',Gxueli='$Gxueli',Gzhuanye='$Gzhuanye' where Gname='$user'";
 $result=mysql_query($exec);
 if($result) 
     echo " <script>alert('修改成功！请重新登陆！');location.href='index.php'; </script>";
-else echo "<script>alert('出现故障！请重新修改！');location.href='update.php'; </script>";
+else echo "<script>alert('出现故障！请重新修改！');location.href='update 2.0.php'; </script>";
 
 ?>
 
