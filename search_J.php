@@ -33,7 +33,7 @@
         <form action="search.php" method="post" id="search">
             <select name="leibie" form="search">
                 <option value="Qname" style= "width:1000px;height:100px">企业名称</option>
-				<option value="Qlocalte" style= "width:1000px;height:100px">企业地址</option>
+				<option value="Qlocate" style= "width:1000px;height:100px">企业地址</option>
 			    <option value="Zemail" style= "width:1000px;height:100px">职位名称</option>
                 <option value="Znumber" style= "width:1000px;height:100px">要求人数</option>
 				<option value="Zmoney" style= "width:1000px;height:100px">工资</option>
