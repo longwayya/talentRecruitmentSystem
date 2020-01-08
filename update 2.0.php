@@ -1,6 +1,6 @@
 <?php
 session_start();
-$Gname=$_SESSION['Gname'];
+$Gname=$_SESSION['user'];
 ?>
 <!DOCTYPE html>  
 <html>  
