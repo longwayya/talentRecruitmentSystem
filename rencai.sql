@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2020 年 01 月 07 日 21:07
+-- 生成日期: 2020 年 01 月 08 日 10:21
 -- 服务器版本: 5.5.53
 -- PHP 版本: 5.4.45
 
@@ -27,7 +27,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `geren` (
-  `Gno` int(11) NOT NULL AUTO_INCREMENT,
   `Gname` char(20) NOT NULL,
   `Gpassword` char(20) NOT NULL,
   `Gtel` varchar(11) NOT NULL,
@@ -36,19 +35,19 @@ CREATE TABLE IF NOT EXISTS `geren` (
   `Gxueli` char(10) NOT NULL,
   `Gemail` char(20) NOT NULL,
   `Gzhuanye` char(10) NOT NULL,
-  PRIMARY KEY (`Gno`),
-  UNIQUE KEY `Gno` (`Gno`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10004 ;
+  PRIMARY KEY (`Gname`),
+  UNIQUE KEY `Gname` (`Gname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `geren`
 --
 
-INSERT INTO `geren` (`Gno`, `Gname`, `Gpassword`, `Gtel`, `Gsex`, `Gyear`, `Gxueli`, `Gemail`, `Gzhuanye`) VALUES
-(10001, '张三', '123456', '123456', '男', 2020, '本科', '111@qq.com', '信息安全'),
-(10000, '李四', '123456', '2222', '女', 2019, '专科', '2.@。com', '无'),
-(10002, '王五', '123456', '123456', '女', 2019, '硕士', '2000@.com', '法学'),
-(10003, '张三', '123456', '123456', '女', 2019, '本科', '111@qq.com', '法学');
+INSERT INTO `geren` (`Gname`, `Gpassword`, `Gtel`, `Gsex`, `Gyear`, `Gxueli`, `Gemail`, `Gzhuanye`) VALUES
+('张三', '123456', '123456', '男', 2020, '本科', '111@qq.com', '信息安全'),
+('李四', '123456', '2222', '女', 2019, '专科', '2.@。com', '无'),
+('王五', '123456', '123456', '女', 2019, '硕士', '2000@.com', '法学'),
+('赵四', '123456', '123456', '女', 2019, '本科', '111@qq.com', '法学');
 
 -- --------------------------------------------------------
 
@@ -95,8 +94,20 @@ CREATE TABLE IF NOT EXISTS `zhiwei` (
   `Zname` char(20) NOT NULL,
   `Zqiye` char(20) NOT NULL,
   `Znumber` int(5) NOT NULL,
-  `Zmoney` int(10) NOT NULL
+  `Zmoney` int(10) NOT NULL,
+  KEY `Zqiye` (`Zqiye`),
+  KEY `Zqiye_2` (`Zqiye`),
+  KEY `Zqiye_3` (`Zqiye`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `zhiwei`
+--
+
+INSERT INTO `zhiwei` (`Zname`, `Zqiye`, `Znumber`, `Zmoney`) VALUES
+('文员', '工商银行保定分行', 2, 2000),
+('前台', '工商银行保定分行', 2, 2000),
+('销售', '工商银行保定分行', 2, 2000);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
