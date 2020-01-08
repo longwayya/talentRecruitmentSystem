@@ -10,7 +10,7 @@ session_start();
 <a href="fabuzhaopin.php"> <font style="color:white">发布招聘</font></a>
 <a href="rencaisousuo.php"> <font style="color:white">人才搜索</font></a>
 <a href="qiye_M.php"> <font style="color:black">修改信息</font></a>
-<a href="Connect.php"> <font style="color:black">退出登录</font></a>
+<a href="index.php"> <font style="color:black">退出登录</font></a>
 <br><br/><br><br/>
 <a href="Q1.php"> <font style="color:white">大专毕业诚挚应聘教师岗位</font></a>
 <br><br/>
