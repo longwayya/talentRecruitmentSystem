@@ -7,8 +7,8 @@ session_start();
  <style>       body{text-align:center}     </style>
  <h2>个人界面</h2>
 <form action="" method="POST" name="myform" onsubmit="return check()">
-<a href="geren_M.php"> <font style="color:white">修改简历</font></a>
-<a href="zhiweisousuo.php"> <font style="color:white">职位搜索</font></a>
+<a href="update 2.0.php"> <font style="color:white">修改简历</font></a>
+<a href="search_J.php"> <font style="color:white">职位搜索</font></a>
 <a href="index.php"> <font style="color:black">退出登录</font></a>
 <br><br/><br><br/>
 <a href="R1.php"> <font style="color:white">高薪招聘房产销售人才</font></a>

@@ -16,6 +16,8 @@ $exec="insert into zhiwei (Zname,Zqiye,Znumber,Zmoney) values"." ('$Zname','$use
 $result=mysql_query($exec);
 if($result) 
     echo " <script>alert('提交成功！');location.href='qiye.php'; </script>";
+
+
 else echo "<script>alert('出现故障！'); location.href='qiye.php';</script>";
 
 ?>
