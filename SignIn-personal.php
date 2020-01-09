@@ -12,7 +12,7 @@ vertical-align:middle;margin:8px;line-height:18px;font-size:18px}
 <body style="background-image:url(2.jpg);background-position:center;">
 <form action="" method="POST" name="myform" onsubmit="return check()">
 <h1 style="font-size:x-large">填写信息</h1>
-姓  名：
+姓  名：<font color="red">*</font>
 <input type="text" name="Gname"><br/><br/>
 性  别：
 <input type="text" name="Gsex"><br/><br/>
@@ -24,10 +24,11 @@ vertical-align:middle;margin:8px;line-height:18px;font-size:18px}
 <input type="text" name="Gxueli"><br/><br/>
 邮  箱：
 <input type="text" name="Gemail"><br/><br/>
-手机号：
+手机号：<font color="red">*</font>
 <input type="text" name="Gtel"><br/><br/>
-密  码：
-<input type="text" name="Gpassword"><br/><br/>
+密  码：<font color="red">*</font>
+<input type="text" name="Gpassword">
+<h1 style="font-size:small; color:red">带*为必填项</h1>
 
 <input class="btn" type="submit" value="注册" name="login1">
 
@@ -50,7 +51,7 @@ $sql = "insert into geren(Gname, Gsex, Gyear, Gzhuanye, Gxueli, Gemail,Gtel,Gpas
 
 $result=mysql_query($sql);
 
-if($result){
+if($result&&('Gname'==NULL||'Gpassword'==NULL||'Gtel'==NULL)){
 		echo "<script>alert('个人注册成功');window.open('index.php','_self')</script>";
 	}
 	else{
