@@ -38,17 +38,19 @@ $Qtel = $_POST['Qtel'];
 $Qemail= $_POST['Qemail'];
 $Qlocate = $_POST['Qlocate'];
 $Qpassword = $_POST['Qpassword'];
-$sql = "insert into qiye(Qname,Qtel,Qemail,Qlocate,Qpassword) values('$Qname', '$Qtel', '$Qemail', '$Qlocate', '$Qpassword')";
-$result=mysql_query($sql);
-if($result&&('Qname'==NULL||'Qpassword'==NULL)){
-		echo "<script>alert('企业注册成功');window.open('index.php','_self')</script>";
-	}
-	else{
+
+if(empty($_POST['Qname'])||empty($_POST['Qpassword'])){
 		echo "<script>alert('企业注册失败');</script>";
 	}
-}
+	else{
+$sql = "insert into qiye(Qname,Qtel,Qemail,Qlocate,Qpassword) values('$Qname', '$Qtel', '$Qemail', '$Qlocate', '$Qpassword')";
+$result=mysql_query($sql);
+		echo "<script>alert('企业注册成功');window.open('index.php','_self')</script>";
+	}
+
 if(isset($_POST['login2'])){
 		echo "<script>window.open('Goto-signin.php','_self')</script>";
+}
 }
 ?>
 </body>
