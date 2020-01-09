@@ -12,7 +12,7 @@ vertical-align:middle;margin:8px;line-height:18px;font-size:18px}
 <body style="background-image:url(2.jpg);background-position:center;">
 <form action="" method="POST" name="myform" onsubmit="return check()">
 <h1 style="font-size:x-large">填写信息</h1>
-名  称：
+名  称：<font color="red">*</font>
 <input type="text" name="Qname"><br/><br/>
 电  话：
 <input type="text" name="Qtel"><br/><br/>
@@ -20,8 +20,9 @@ vertical-align:middle;margin:8px;line-height:18px;font-size:18px}
 <input type="text" name="Qemail"><br/><br/>
 地  址：
 <input type="text" name="Qlocate"><br/><br/>
-密  码：
-<input type="text" name="Qpassword"><br/><br/>
+密  码：<font color="red">*</font>
+<input type="text" name="Qpassword">
+<h1 style="font-size:small; color:red">带*为必填项</h1>
 
 <input class="btn" type="submit" value="注册" name="login1">
 
@@ -39,7 +40,7 @@ $Qlocate = $_POST['Qlocate'];
 $Qpassword = $_POST['Qpassword'];
 $sql = "insert into qiye(Qname,Qtel,Qemail,Qlocate,Qpassword) values('$Qname', '$Qtel', '$Qemail', '$Qlocate', '$Qpassword')";
 $result=mysql_query($sql);
-if($result){
+if($result&&('Qname'==NULL||'Qpassword'==NULL)){
 		echo "<script>alert('企业注册成功');window.open('index.php','_self')</script>";
 	}
 	else{
