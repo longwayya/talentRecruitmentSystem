@@ -47,16 +47,17 @@ $Gxueli = $_POST['Gxueli'];
 $Gemail= $_POST['Gemail'];
 $Gtel = $_POST['Gtel'];
 $Gpassword = $_POST['Gpassword'];
-$sql = "insert into geren(Gname, Gsex, Gyear, Gzhuanye, Gxueli, Gemail,Gtel,Gpassword) values('$Gname', '$Gsex', '$Gyear', '$Gzhuanye', '$Gxueli', '$Gemail','$Gtel','$Gpassword')";
-
-$result=mysql_query($sql);
-
-if($result&&('Gname'==NULL||'Gpassword'==NULL||'Gtel'==NULL)){
-		echo "<script>alert('个人注册成功');window.open('index.php','_self')</script>";
-	}
-	else{
+if(empty($_POST['Gname'])||empty($_POST['Gpassword'])||empty($_POST['Gtel'])){
 		echo "<script>alert('个人注册失败');</script>";
 	}
+	else{
+$sql = "insert into geren(Gname, Gsex, Gyear, Gzhuanye, Gxueli, Gemail,Gtel,Gpassword) values('$Gname', '$Gsex', '$Gyear', '$Gzhuanye', '$Gxueli', '$Gemail','$Gtel','$Gpassword')";
+	$result=mysql_query($sql);
+	echo "<script>alert('个人注册成功');window.open('index.php','_self')</script>";
+	}
+
+
+
 }
 if(isset($_POST['login2'])){
 		echo "<script>window.open('Goto-signin.php','_self')</script>";
